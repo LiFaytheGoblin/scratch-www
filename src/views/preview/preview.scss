@@ -6,6 +6,8 @@ $player-width: 482px;
 $player-height: 406px;
 $stage-width: 480px;
 
+$medium-and-small: "screen and (max-width : #{$tablet}-1)";
+
 /* override view padding for share banner */
 #view {
     padding: 0;
@@ -182,6 +184,15 @@ $stage-width: 480px;
         justify-content: space-between;
         align-items: flex-start;
         flex-wrap: nowrap;
+
+        &.wrap-to-col {
+            @media #{$medium-and-small} {
+                width: 100%;
+                flex-wrap: wrap-reverse;
+                flex-direction: column;
+                justify-content: center;
+            }
+        }
     }
 
     .guiPlayer {
@@ -196,6 +207,12 @@ $stage-width: 480px;
         align-items: flex-start;
         flex: 1;
         flex-flow: column;
+
+        @media #{$medium-and-small} {
+            width: 100%;
+            margin-left: 0;
+            margin-top: 1rem;
+        }
     }
 
     .share-date {
@@ -300,11 +317,41 @@ $stage-width: 480px;
         transform: scale(-1, 1);
         margin: 0;
         text-align: right;
+
+        @media #{$medium-and-small} {
+            padding: 0;
+        }
     }
 
     .stats {
         line-height: 2rem;
         justify-content: flex-start;
+    }
+
+    .stats, .subactions, .action-buttons {
+      @media #{$medium-and-small} {
+          margin: 0;
+          justify-content: center;
+          flex-direction: row;
+      }
+
+      & > div, .action-button {
+          @media #{$medium-and-small} {
+              padding: 0 1rem;
+          }
+      }
+    }
+
+    .stats, .subactions {
+      @media #{$medium-and-small} {
+          width: 100%;
+      }
+    }
+
+    .subactions {
+      @media #{$medium-and-small} {
+          margin-top: 1rem;
+      }
     }
 
     .project-loves,
@@ -458,7 +505,7 @@ $stage-width: 480px;
             content: "";
         }
     }
-    
+
     .studio-button {
         &:before {
             background-image: url("/svgs/project/studio-add-white.svg");
