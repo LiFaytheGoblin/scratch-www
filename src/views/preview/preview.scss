@@ -154,11 +154,11 @@ $little-height: "screen and (max-height : 460px)";
         }
 
         .comment, .comment-top-row, .comment-bottom-row {
-          flex-direction: row;
+            flex-direction: row;
         }
 
         .comment-bubble {
-          text-align: left;
+            text-align: left;
         }
     }
 
@@ -223,9 +223,9 @@ $little-height: "screen and (max-height : 460px)";
         flex-flow: column;
 
         @media #{$medium-and-small} {
-            width: 100%;
-            margin-left: 0;
             margin-top: 1rem;
+            margin-left: 0;
+            width: 100%;
         }
     }
 
@@ -343,29 +343,29 @@ $little-height: "screen and (max-height : 460px)";
     }
 
     .stats, .subactions, .action-buttons {
-      @media #{$medium-and-small} {
-          margin: 0;
-          justify-content: center;
-          flex-direction: row;
-      }
+        @media #{$medium-and-small} {
+            margin: 0;
+            justify-content: center;
+            flex-direction: row;
+        }
 
-      & > div, .action-button {
-          @media #{$medium-and-small} {
-              padding: 0 1rem;
-          }
-      }
+        & > div, .action-button {
+            @media #{$medium-and-small} {
+                padding: 0 1rem;
+            }
+        }
     }
 
     .stats, .subactions {
-      @media #{$medium-and-small} {
-          width: 100%;
-      }
+        @media #{$medium-and-small} {
+            width: 100%;
+        }
     }
 
     .subactions {
-      @media #{$medium-and-small} {
-          margin-top: 1rem;
-      }
+        @media #{$medium-and-small} {
+            margin-top: 1rem;
+        }
     }
 
     .project-loves,
