@@ -6,8 +6,11 @@ $player-width: 482px;
 $player-height: 406px;
 $stage-width: 480px;
 
+/* screen sizes */
+$small: "screen and (max-width : #{$mobile}-1)";
+$medium: "screen and (min-width : #{$mobile}) and (max-width : #{$tablet}-1)";
+$big: "screen and (min-width : #{$tablet})";
 $medium-and-small: "screen and (max-width : #{$tablet}-1)";
-$little-height: "screen and (max-height : 460px)";
 
 /* override view padding for share banner */
 #view {
@@ -32,7 +35,7 @@ $little-height: "screen and (max-height : 460px)";
         &.has-error {
 
             .validation-message {
-                transform: translate(22rem, 0);
+                right: 0;
             }
         }
 
@@ -80,7 +83,6 @@ $little-height: "screen and (max-height : 460px)";
 
     .title {
         margin-left: 1rem;
-        /* width: inherit;  Inherits the width of whatever this is in. This works well for the preview page and might need to change if used in a different context*/
         min-width: 0;
         text-align: left;
         font-size: .8rem;
@@ -88,12 +90,11 @@ $little-height: "screen and (max-height : 460px)";
     }
 
     .validation-message {
-        $arrow-border-width: 1rem;
         display: block;
         position: absolute;
-        top: 0;
-        left: 0;
-        margin-left: $arrow-border-width;
+        z-index: 1;
+        $arrow-border-width: 1rem;
+        margin-top: $arrow-border-width;
         border: 1px solid $active-gray;
         border-radius: 5px;
         background-color: $ui-orange;
@@ -104,13 +105,18 @@ $little-height: "screen and (max-height : 460px)";
         color: $type-white;
         font-size: 1rem;
 
+        @media #{$medium-and-small} {
+            margin-top: calc($arrow-border-width / 2);
+            width: 100%;
+        }
+
         &:before {
             display: block;
             position: absolute;
-            top: 1rem;
-            left: -$arrow-border-width / 2;
+            top: -.5rem;
+            left: calc(50% - calc(#{$arrow-border-width} / 2));
 
-            transform: rotate(45deg);
+            transform: rotate(135deg);
 
             border-bottom: 1px solid $active-gray;
             border-left: 1px solid $active-gray;
@@ -121,6 +127,10 @@ $little-height: "screen and (max-height : 460px)";
             height: $arrow-border-width;
 
             content: "";
+
+            @media #{$medium-and-small} {
+                display: none;
+            }
         }
     }
 
