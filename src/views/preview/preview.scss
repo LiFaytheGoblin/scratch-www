@@ -107,7 +107,9 @@ $medium-and-small: "screen and (max-width : #{$tablet}-1)";
 
         @media #{$medium-and-small} {
             margin-top: calc($arrow-border-width / 2);
-            width: 100%;
+            max-width: 100%;
+            position: relative;
+            left: -3.275rem;
         }
 
         &:before {
@@ -217,11 +219,25 @@ $medium-and-small: "screen and (max-width : #{$tablet}-1)";
                 flex-direction: row;
             }
         }
+
+        &.force-column {
+            @media #{$medium-and-small} {
+                flex-direction: column;
+            }
+        }
     }
 
     .guiPlayer {
         display: inline-block;
         width: $player-width;
+
+        @media #{$small} {
+            width: 100%;
+
+            .stage-wrapper {
+              max-width: 100%;
+            }
+        }
     }
 
     .project-notes {
@@ -589,6 +605,21 @@ $medium-and-small: "screen and (max-width : #{$tablet}-1)";
         .thumbnail-column {
             display: inline-block;
             width: 100%;
+
+            /* the following can be transferred to
+            src/components/thumbnailcolumn/thumbnailcolumn.scss
+            after testing */
+            @media #{$medium-and-small} {
+                flex-direction: row;
+
+                .thumbnail {
+                    display: inline-block;
+                }
+            }
+        }
+
+        @media #{$medium-and-small} {
+            margin-top: 1rem;
         }
     }
 }

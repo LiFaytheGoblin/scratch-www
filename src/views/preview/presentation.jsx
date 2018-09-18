@@ -142,7 +142,7 @@ const PreviewPresentation = ({
                                 </div>
                             </MediaQuery>
                         </FlexRow>
-                        <FlexRow className="preview-row">
+                        <FlexRow className="preview-row force-column">
                             <div className="guiPlayer">
                                 <IntlGUI
                                     isPlayerOnly
