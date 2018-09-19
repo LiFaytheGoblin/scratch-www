@@ -106,10 +106,10 @@ $medium-and-small: "screen and (max-width : #{$tablet}-1)";
         font-size: 1rem;
 
         @media #{$medium-and-small} {
-            margin-top: calc($arrow-border-width / 2);
-            max-width: 100%;
             position: relative;
             left: -3.275rem;
+            margin-top: calc($arrow-border-width / 2);
+            max-width: 100%;
         }
 
         &:before {
@@ -235,7 +235,7 @@ $medium-and-small: "screen and (max-width : #{$tablet}-1)";
             width: 100%;
 
             .stage-wrapper {
-              max-width: 100%;
+                  max-width: 100%;
             }
         }
     }
