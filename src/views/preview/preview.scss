@@ -245,16 +245,18 @@ $medium-and-small: "screen and (max-width : #{$tablet}-1)";
         display: inline-block;
         width: $player-width;
 
-        @media #{$medium-and-small} {
-            align-self: center;
-        }
-
         @media #{$small} {
             width: 100%;
 
             .stage-wrapper {
                 max-width: 100%;
             }
+        }
+    }
+
+    .force-center {
+        @media #{$medium-and-small} {
+            align-self: center;
         }
     }
 
