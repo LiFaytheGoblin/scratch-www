@@ -245,6 +245,10 @@ $medium-and-small: "screen and (max-width : #{$tablet}-1)";
         display: inline-block;
         width: $player-width;
 
+        @media #{$medium-and-small} {
+            align-self: center;
+        }
+
         @media #{$small} {
             width: 100%;
 
@@ -652,6 +656,7 @@ $medium-and-small: "screen and (max-width : #{$tablet}-1)";
 
         @media #{$medium-and-small} {
             margin-top: 1rem;
+            align-self: flex-start;
         }
     }
 }
