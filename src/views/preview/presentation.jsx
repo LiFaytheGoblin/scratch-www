@@ -181,6 +181,28 @@ const PreviewPresentation = ({
                         <FlexRow className="project-notes">
                             <RemixCredit projectInfo={parentInfo} />
                             <RemixCredit projectInfo={originalInfo} />
+                            <MediaQuery maxWidth={frameless.tablet - 1}>
+                                <FlexRow className="preview-row">
+                                    <FlexRow className="extension-list">
+                                        <ExtensionChip
+                                            extensionL10n="music"
+                                            extensionName="music"
+                                            hasStatus="needs-connection"
+                                            iconURI={`/svgs/project/extension-music.svg`}
+                                            key="music"
+                                        />
+                                        {extensions && extensions.map(extension => (
+                                            <ExtensionChip
+                                                extensionL10n={extension.l10nId}
+                                                extensionName={extension.name}
+                                                hasStatus={extension.hasStatus}
+                                                iconURI={extension.icon && `/svgs/project/${extension.icon}`}
+                                                key={extension.name || extension.l10nId}
+                                            />
+                                        ))}
+                                    </FlexRow>
+                                </FlexRow>
+                            </MediaQuery>
                             {/*  eslint-disable max-len */}
                             <FlexRow className="description-block">
                                 <div className="project-textlabel">
@@ -275,19 +297,28 @@ const PreviewPresentation = ({
                             />
                         </FlexRow>
                     </MediaQuery>
-                    <FlexRow className="preview-row">
-                        <FlexRow className="extension-list">
-                            {extensions && extensions.map(extension => (
+                    <MediaQuery minWidth={frameless.tablet}>
+                        <FlexRow className="preview-row">
+                            <FlexRow className="extension-list">
                                 <ExtensionChip
-                                    extensionL10n={extension.l10nId}
-                                    extensionName={extension.name}
-                                    hasStatus={extension.hasStatus}
-                                    iconURI={extension.icon && `/svgs/project/${extension.icon}`}
-                                    key={extension.name || extension.l10nId}
+                                    extensionL10n="music"
+                                    extensionName="music"
+                                    hasStatus="needs-connection"
+                                    iconURI={`/svgs/project/extension-music.svg`}
+                                    key="music"
                                 />
-                            ))}
+                                {extensions && extensions.map(extension => (
+                                    <ExtensionChip
+                                        extensionL10n={extension.l10nId}
+                                        extensionName={extension.name}
+                                        hasStatus={extension.hasStatus}
+                                        iconURI={extension.icon && `/svgs/project/${extension.icon}`}
+                                        key={extension.name || extension.l10nId}
+                                    />
+                                ))}
+                            </FlexRow>
                         </FlexRow>
-                    </FlexRow>
+                    </MediaQuery>
                 </div>
                 <div className="project-lower-container">
                     <div className="inner">
