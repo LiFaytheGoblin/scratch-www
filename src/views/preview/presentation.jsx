@@ -183,13 +183,6 @@ const PreviewPresentation = ({
                             <MediaQuery maxWidth={frameless.tablet - 1}>
                                 <FlexRow className="preview-row">
                                     <FlexRow className="extension-list">
-                                        <ExtensionChip
-                                            extensionL10n="music"
-                                            extensionName="music"
-                                            hasStatus="needs-connection"
-                                            iconURI={`/svgs/project/extension-music.svg`}
-                                            key="music"
-                                        />
                                         {extensions && extensions.map(extension => (
                                             <ExtensionChip
                                                 extensionL10n={extension.l10nId}

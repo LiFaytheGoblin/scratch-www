@@ -11,6 +11,7 @@ $small: "screen and (max-width : #{$mobile}-1)";
 $medium: "screen and (min-width : #{$mobile}) and (max-width : #{$tablet}-1)";
 $intermediate: "screen and (min-width : #{$tablet}) and (max-width : 941px)"; /* 941 because currently breakpoint of .inner in www is 941 */
 $medium-and-small: "screen and (max-width : #{$tablet}-1)";
+$up-to-intermediate: "screen and (max-width : 941px)";
 
 /* override view padding for share banner */
 #view {
@@ -29,10 +30,10 @@ $medium-and-small: "screen and (max-width : #{$tablet}-1)";
 .preview {
 
     .inner {
-      @media #{$medium-and-small, $intermediate} {
-          width: 90%;
-          margin: 0 auto;
-      }
+        @media #{$up-to-intermediate} {
+            margin: 0 auto;
+            width: 90%;
+        }
     }
 
     .project-title {
@@ -166,14 +167,14 @@ $medium-and-small: "screen and (max-width : #{$tablet}-1)";
     }
 
     .comments-container {
-      width: 65%;
-      max-width: 100%;
-      flex: 1;
-      padding-right: 1.5rem;
+        padding-right: 1.5rem;
+        width: 65%;
+        max-width: 100%;
+        flex: 1;
 
         @media #{$medium-and-small} {
-            width: 100%;
             padding: 0;
+            width: 100%;
         }
 
         .comment, .comment-top-row, .comment-bottom-row {
