@@ -78,7 +78,6 @@ const PreviewPresentation = ({
 }) => (
     <div className="preview">
         <ShareBanner shared={isShared} />
-
         { projectInfo && projectInfo.author && projectInfo.author.id && (
             <Formsy onKeyPress={onKeyPress}>
                 <div className="inner">
